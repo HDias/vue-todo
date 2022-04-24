@@ -1,3 +1,3 @@
-# TODO list with localstorage
+# Vue TODO list with localStorage
 
 ![Index](docs/index.png)

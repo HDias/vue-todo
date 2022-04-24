@@ -1,2 +1,3 @@
-# Simple VUE TODO with localstorage
+# TODO list with localstorage
 
+![Index](docs/index.png)

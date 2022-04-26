@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="card" :class="done ? 'done' : 'todo'">
+    <div class="card" :class="task.done ? 'done' : 'todo'">
       <span class="content" @click="$emit('handle')">
-        <p v-if="done"><s >{{ content }}</s></p>
-        <p v-else>{{ content }}</p>
+        <p v-if="task.done"><s >{{ task.content }}</s></p>
+        <p v-else>{{ task.content }}</p>
       </span>
       <button @click="$emit('remove')">x</button>
     </div>
@@ -13,20 +13,10 @@
 <script>
 export default {
   props: {
-    id: {
-      type: Number,
+    task: {
+      type: Object,
       required: true
     },
-
-    content: {
-      type: String,
-      required: true
-    },
-
-    done: {
-      type: Boolean,
-      required: true
-    }
   }
 }
 </script>

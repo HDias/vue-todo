@@ -2,10 +2,8 @@
   <div>
     <div class="listTasks">
       <TaskCard
-        v-for="(todo, index) in todos"
-        :id="index"
-        :content="todo.content"
-        :done="todo.done"
+        v-for="(task, index) in tasks"
+        :task="task"
         :key="index"
         @remove="$emit('remove', index)"
         @handle="$emit('handle', index)" />
@@ -22,7 +20,7 @@ export default {
   },
 
   props: {
-    todos: {
+    tasks: {
       type: Array
     }
   }

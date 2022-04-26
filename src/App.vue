@@ -3,21 +3,21 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <p>{{ progress.toFixed(0) }} %</p>
     <ProgressBar :progress-value="progress" />
-    <AddTask @todo="addTask"/>
-    <ListCard :todos="tasks" @remove="removeTask" @handle="handleTask" />
+    <AddTask @task="addTask"/>
+    <ListTask :tasks="tasks" @remove="removeTask" @handle="handleTask" />
   </div>
 </template>
 
 <script>
 import AddTask from './components/AddTask.vue'
-import ListCard from './components/ListCard.vue'
+import ListTask from './components/ListTask.vue'
 import ProgressBar from './components/ProgressBar.vue'
 
 export default {
   name: 'App',
   components: {
     AddTask,
-    ListCard,
+    ListTask,
     ProgressBar
   },
 
@@ -50,8 +50,8 @@ export default {
   },
 
   methods: {
-    addTask(todo) {
-      this.tasks.push({ content: todo, done: false });
+    addTask(task) {
+      this.tasks.push(task);
 
       this.saveTasks();
     },

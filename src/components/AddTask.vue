@@ -18,7 +18,7 @@ export default {
   methods: {
     addCard() {
       if(this.value) {
-        this.$emit('todo', this.value)
+        this.$emit('task', { content: this.value, done: false })
         this.value = null
 
         return;

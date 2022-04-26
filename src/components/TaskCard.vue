@@ -2,8 +2,7 @@
   <div>
     <div class="card" :class="task.done ? 'done' : 'todo'">
       <span class="content" @click="$emit('handle')">
-        <p v-if="task.done"><s >{{ task.content }}</s></p>
-        <p v-else>{{ task.content }}</p>
+        <p>{{ task.content }}</p>
       </span>
       <button @click="$emit('remove')">x</button>
     </div>
@@ -45,5 +44,9 @@ export default {
 
   .done {
     background-color: #579f5c;
+  }
+
+  .done .content {
+    text-decoration: line-through;
   }
 </style>

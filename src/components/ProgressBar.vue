@@ -1,9 +1,6 @@
 <template>
   <div>
-    <progress
-      :value="progressValue"
-      max="100"
-      class="myProgress" />
+    <progress :value="progressValue" max="100" class="myProgress" />
   </div>
 </template>
 
@@ -12,15 +9,15 @@ export default {
   props: {
     progressValue: {
       type: Number,
-      default: 0
-    }
-  }
-}
+      default: 0,
+    },
+  },
+};
 </script>
 
 <style scoped>
-  .myProgress {
-    width: 50vh;
-    height: 2rem;
-  }
+.myProgress {
+  width: 50%;
+  height: 2rem;
+}
 </style>

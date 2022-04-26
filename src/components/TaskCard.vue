@@ -4,7 +4,7 @@
       <span class="content" @click="$emit('handle')">
         <p>{{ task.content }}</p>
       </span>
-      <button @click="$emit('remove')">x</button>
+      <button class="close" @click="$emit('remove')">x</button>
     </div>
   </div>
 </template>
@@ -14,39 +14,41 @@ export default {
   props: {
     task: {
       type: Object,
-      required: true
+      required: true,
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-  .card {
-    display: flex;
-    height: 100px;
-    width: 200px;
-    border: 1px solid black;
+.card {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
-    /* padding: 1rem; */
-  }
-  .content {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.todo {
+  background-color: #d78b8b;
+}
 
-  }
+.done {
+  background-color: #579f5c;
+}
 
-  .todo {
-    background-color: #d78b8b;
-  }
+.done .content {
+  text-decoration: line-through;
+}
 
-  .done {
-    background-color: #579f5c;
-  }
-
-  .done .content {
-    text-decoration: line-through;
-  }
+.close {
+  cursor: pointer;
+}
 </style>

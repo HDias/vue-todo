@@ -6,25 +6,26 @@
         :task="task"
         :key="index"
         @remove="$emit('remove', index)"
-        @handle="$emit('handle', index)" />
+        @handle="$emit('handle', index)"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import TaskCard from './TaskCard.vue'
+import TaskCard from "./TaskCard.vue";
 
 export default {
   components: {
-    TaskCard
+    TaskCard,
   },
 
   props: {
     tasks: {
-      type: Array
-    }
-  }
-}
+      type: Array,
+    },
+  },
+};
 </script>
 
 <style scoped>
